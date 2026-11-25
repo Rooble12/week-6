@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Star Catcher</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <h1>Star Catcher</h1>
+
+    <section class="hud" aria-live="polite">
+      <div class="stat"><span class="label">Score</span><span id="score" class="value">0</span></div>
+      <div class="stat"><span class="label">Goal</span><span class="value">20</span></div>
+      <div class="stat"><span class="label">Lives</span><span id="lives" class="value">❤❤❤</span></div>
+      <div class="stat"><span class="label">Best</span><span id="best" class="value">0</span></div>
+    </section>
+
+    <div class="stage">
+      <canvas id="game" aria-label="Star Catcher game board"></canvas>
+
+      <div id="overlay" class="overlay">
+        <h2 id="overlayTitle">Ready?</h2>
+        <p id="overlayText">Catch ⭐ stars, avoid 💣 bombs.<br>Reach 20 points to win!</p>
+        <button id="startBtn" class="btn primary">Start Game</button>
+      </div>
+    </div>
+
+    <button id="restartBtn" class="btn secondary">Restart</button>
+    <p class="help">Move: drag / touch the screen, mouse, or ← → (A / D) keys</p>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

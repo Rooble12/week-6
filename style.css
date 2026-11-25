@@ -1,0 +1,112 @@
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: #0f1226;
+  color: #fff;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.app {
+  min-height: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+h1 {
+  margin: 4px 0;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+}
+
+.hud {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.stat {
+  background: #1b2045;
+  border-radius: 10px;
+  padding: 6px 4px;
+  text-align: center;
+}
+
+.label {
+  display: block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.value {
+  display: block;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+#score { color: #ffd54a; font-size: 1.6rem; }
+
+.stage {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 3;
+  background: linear-gradient(#1a1f4d, #0b0e26);
+  border-radius: 14px;
+  touch-action: none; /* stops page scrolling while dragging on the canvas */
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  text-align: center;
+  background: rgba(8, 10, 30, 0.82);
+  border-radius: 14px;
+}
+
+.overlay.hidden { display: none; }
+.overlay h2 { margin: 0; font-size: 2rem; }
+.overlay p { margin: 0 0 8px; line-height: 1.5; }
+.overlay.win h2 { color: #6dff9c; }
+.overlay.lose h2 { color: #ff6b6b; }
+
+.btn {
+  border: 0;
+  border-radius: 12px;
+  padding: 14px 28px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  min-height: 48px; /* comfortable touch target */
+}
+
+.btn.primary { background: #ffd54a; color: #1b1b1b; }
+.btn.secondary { background: #2a3066; color: #fff; width: 100%; max-width: 360px; }
+.btn:active { transform: scale(0.97); }
+
+.help { margin: 0; font-size: 0.8rem; opacity: 0.65; text-align: center; }
+
+@media (max-height: 700px) {
+  h1 { display: none; }
+}
